@@ -1,0 +1,17 @@
+<div class="container body-content">
+    <div class="row">
+        {{#each users}}
+            <div class="col-md-6">
+                <user>
+                    <header>
+                        <h2>{{this.username}}</h2>
+                    </header>
+
+                    <p>{{this.score}}
+                    </p>
+
+                </user>
+            </div>
+        {{/each}}
+    </div>
+</div>
