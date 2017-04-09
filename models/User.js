@@ -9,9 +9,8 @@ let userSchema = mongoose.Schema(
     {
         username: {type: String, required: true, unique: true},
         passwordHash: {type: String, required: true},
-        email: {type: String, required: true},
-        score: {type:Number, default:0},
-        salt: {type: String, required: true}
+        salt: {type: String, required: true},
+        userInfo: {type:mongoose.Schema.ObjectId, ref:'UserInfo'}
     }
 );
 
@@ -21,6 +20,13 @@ userSchema.method ({
         let isSamePasswordHash = inputPasswordHash === this.passwordHash;
 
         return isSamePasswordHash;
+    },
+    isAuthor: function (info) {
+        if (!info) {
+            return false;
+        }
+        let isAuthor = info.user.equals(this.user.id);
+        return isAuthor;
     }
 });
 

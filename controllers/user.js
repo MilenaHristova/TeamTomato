@@ -3,6 +3,7 @@
  */
 
 const User = require('mongoose').model('User');
+const UserInfo = require('mongoose').model('UserInfo');
 
 const encryption = require('./../utilities/encryption');
 
@@ -32,13 +33,23 @@ module.exports = {
                 let userObject = {
                     username: registerArgs.username,
                     passwordHash: passwordHash,
-                    email: registerArgs.email,
-                    score: 0,
                     salt: salt
                 };
 
 
                 User.create(userObject).then(user => {
+                    let userProfile = {
+                        user: user.id,
+                        score: 0,
+                        email: registerArgs.email,
+                        description: ''
+                    }
+
+                    UserInfo.create(userProfile).then(info => {
+                        user.userInfo = info.id;
+                        user.save();
+                    })
+
                     req.logIn(user, (err) => {
                         if (err) {
                             registerArgs.error = err.message;

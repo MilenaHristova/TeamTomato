@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>SoftUni Blog</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/creative.css' />
     <script src="/javascripts/jquery-1.10.2.js"></script>
     <script src="/javascripts/bootstrap.js"></script>
 </head>
@@ -21,7 +21,7 @@
             {{#if user}}
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/user/profile">{{user.username}}</a></li>
+                        <li><a href="/profile/ownprofile/{{user.id}}">{{user.username}}</a></li>
                         <li><a href="/leaderboard/leaderboard">Best scores</a></li>
                         <li><a href="/user/logout">Logout</a></li>
                     </ul>

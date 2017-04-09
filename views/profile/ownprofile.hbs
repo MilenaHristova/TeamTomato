@@ -1,0 +1,28 @@
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-12">
+            <user>
+                <header>
+                    <h2>{{user.username}}</h2>
+                </header>
+
+                <p>
+                    {{user.userInfo.score}}
+                </p>
+
+                <small class="author">
+                    {{user.userInfo.email}}
+                </small>
+
+                <footer>
+                    <div class="pull-right">
+
+                            <a class="btn btn-success btn-xs" href="/profile/edit/{{user.id}}">Edit &raquo;</a>
+                            <a class="btn btn-default btn-xs" href="/">Back &raquo;</a>
+
+                    </div>
+                </footer>
+            </user>
+        </div>
+    </div>
+</div>

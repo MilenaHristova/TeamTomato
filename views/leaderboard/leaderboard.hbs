@@ -1,16 +1,21 @@
 <div class="container body-content">
     <div class="row">
-        {{#each users}}
+        {{#each profiles}}
             <div class="col-md-6">
-                <user>
+                <profile>
                     <header>
-                        <h2>{{this.username}}</h2>
+                            <h2>{{this.user.username}}</h2>
                     </header>
 
                     <p>{{this.score}}
                     </p>
+                    <footer>
+                        <div class="pull-right">
+                            <a class="btn btn-default btn-xs" href="/profile/profile/{{this.id}}">Read more &raquo;</a>
+                        </div>
+                    </footer>
 
-                </user>
+                </profile>
             </div>
         {{/each}}
     </div>
