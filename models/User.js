@@ -11,6 +11,7 @@ let userSchema = mongoose.Schema(
         passwordHash: {type: String, required: true},
         salt: {type: String, required: true},
         userInfo: {type:mongoose.Schema.ObjectId, ref:'UserInfo'},
+        score: {type:mongoose.Schema.ObjectId, ref:'Score'}
     }
 );
 

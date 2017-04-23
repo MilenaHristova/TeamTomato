@@ -9,7 +9,7 @@ module.exports = {
     details: (req,res) => {
         let id = req.params.id;
 
-        UserInfo.findById(id).populate('user').then(info => {
+        User.findById(id).populate('userInfo').populate('score').then(info => {
             if(!req.user){
                 res.render('profile/profile', {profile:info});
                 return;
@@ -18,14 +18,7 @@ module.exports = {
         })
         
     },
-    profile: (req,res) => {
-        let id = req.params.id;
 
-        User.findById(id).populate('userInfo').then(info => {
-                res.render('profile/ownprofile', {user: info});
-            })
-        
-    },
     editGet: (req, res) => {
         let id = req.params.id;
 
@@ -48,7 +41,7 @@ module.exports = {
             }else{
                 UserInfo.update({_id:profileId}, {$set: {email: profileArgs.email, description: profileArgs.description}})
                     .then (updateStatus => {
-                        res.redirect(`/profile/ownprofile/${id}`);
+                        res.redirect(`/profile/profile/${id}`);
                     })
             }
 

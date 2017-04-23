@@ -22,7 +22,7 @@ module.exports = (app) => {
     app.get('/leaderboard/leaderboard', leaderboardController.leaderboard);
 
     app.get('/profile/profile/:id', profileController.details);
-    app.get('/profile/ownprofile/:id', profileController.profile);
+
 
     app.get('/profile/edit/:id', profileController.editGet);
     app.post('/profile/edit/:id', profileController.editPost);

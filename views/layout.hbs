@@ -5,6 +5,7 @@
     <link rel='stylesheet' href="/stylesheets/style.css"/>
     <script src="/javascripts/jquery-1.10.2.js"></script>
     <script src="/javascripts/bootstrap.js"></script>
+    <script src="/javascripts/rowlink.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user.username}}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/profile/ownprofile/{{user.id}}">View profile</a></li>
+                                <li><a href="/profile/profile/{{user.id}}">View profile</a></li>
                                 <li><a href="/profile/edit/{{user.id}}">Edit profile</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="/user/logout">Logout</a></li>

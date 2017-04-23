@@ -20,6 +20,7 @@ module.exports = (config) => {
 
     require('./../models/User');
     require('./../models/UserInfo');
+    require('./../models/Score');
 
 
 

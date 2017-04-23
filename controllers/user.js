@@ -4,6 +4,7 @@
 
 const User = require('mongoose').model('User');
 const UserInfo = require('mongoose').model('UserInfo');
+const Score = require('mongoose').model('Score');
 
 
 const encryption = require('./../utilities/encryption');
@@ -41,7 +42,6 @@ module.exports = {
 
                     let userProfile = {
                         user: user.id,
-                        score: 0,
                         email: registerArgs.email,
                         description: ''
                     }
@@ -49,6 +49,17 @@ module.exports = {
                     UserInfo.create(userProfile).then(info => {
                         user.userInfo = info.id;
                         user.save();
+
+                        let scoreObject = {
+                            user: user.id,
+                            score: 0,
+                            place: 0
+                        }
+
+                        Score.create(scoreObject).then(score => {
+                            user.score = score.id;
+                            user.save();
+                        })
                     })
 
                     req.logIn(user, (err) => {
