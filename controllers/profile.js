@@ -11,7 +11,7 @@ module.exports = {
 
         UserInfo.findById(id).populate('user').then(info => {
             if(!req.user){
-                res.render('profile/profile', {profile:info, isUserAuthorized: false});
+                res.render('profile/profile', {profile:info});
                 return;
             }
             res.render('profile/profile', {profile:info});
@@ -22,14 +22,15 @@ module.exports = {
         let id = req.params.id;
 
         User.findById(id).populate('userInfo').then(info => {
-            res.render('profile/ownprofile', {user: info});
-        })
+                res.render('profile/ownprofile', {user: info});
+            })
+        
     },
     editGet: (req, res) => {
         let id = req.params.id;
 
-        User.findById(id).populate('userInfo').then(info => {
-            res.render('profile/edit', info);
+        User.findById(id).populate('userInfo').then(user => {
+            res.render('profile/edit', {info: user.userInfo});
         });
 
     },
@@ -47,7 +48,7 @@ module.exports = {
             }else{
                 UserInfo.update({_id:profileId}, {$set: {email: profileArgs.email, description: profileArgs.description}})
                     .then (updateStatus => {
-                        res.redirect('/');
+                        res.redirect(`/profile/ownprofile/${id}`);
                     })
             }
 

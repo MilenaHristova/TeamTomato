@@ -2,31 +2,39 @@
 <html>
 <head>
     <title>SoftUni Blog</title>
-    <link rel='stylesheet' href='/stylesheets/creative.css' />
+    <link rel='stylesheet' href="/stylesheets/style.css"/>
     <script src="/javascripts/jquery-1.10.2.js"></script>
     <script src="/javascripts/bootstrap.js"></script>
 </head>
+
 <body>
-<header>
-    <div class="navbar navbar-default navbar-fixed-top text-uppercase">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="/" class="navbar-brand">SoftUni Blog</a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            {{#if user}}
+  <header>
+     <div class="navbar navbar-default navbar-fixed-top text-uppercase">
+     <div class="container">
+                    <div class="navbar-header">
+                        <a href="/" class="navbar-brand">Break The AMS</a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+              {{#if user}}
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/profile/ownprofile/{{user.id}}">{{user.username}}</a></li>
                         <li><a href="/leaderboard/leaderboard">Best scores</a></li>
-                        <li><a href="/user/logout">Logout</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user.username}}<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/profile/ownprofile/{{user.id}}">View profile</a></li>
+                                <li><a href="/profile/edit/{{user.id}}">Edit profile</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/user/logout">Logout</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
-            {{/if}}
+              {{/if}}
             {{#unless user}}
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">

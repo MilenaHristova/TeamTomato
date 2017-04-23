@@ -1,22 +1,37 @@
-<div class="container body-content">
-    <div class="row">
-        {{#each profiles}}
-            <div class="col-md-6">
-                <profile>
-                    <header>
-                            <h2>{{this.user.username}}</h2>
-                    </header>
-
-                    <p>{{this.score}}
-                    </p>
-                    <footer>
-                        <div class="pull-right">
-                            <a class="btn btn-default btn-xs" href="/profile/profile/{{this.id}}">Read more &raquo;</a>
-                        </div>
-                    </footer>
-
-                </profile>
-            </div>
-        {{/each}}
+<div class="header">
+    <div class="container">
+        <h2>Leaderboard</h2>
     </div>
+</div>
+
+<div class="container">
+
+    <table class="table table-striped table-hover">
+
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th style="width: 60px">Score</th>
+            <th style="width: 20px"></th>
+            <th style="width: 20px"></th>
+            <th style="width: 20px"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {{#each profiles}}
+
+            <profile>
+                <td class="name">{{this.user.username}}</td>
+                <td class="score"><span class="badge {{#if is_max}}badge-success{{/if}} {{#if is_min}}badge-warning{{/if}}">{{this.score}}</span></td>
+                <td><i class="increment icon-thumbs-up" rel="tooltip" data-original-title="Add five points to the score"></i></td>
+                <td><i class="decrement icon-thumbs-down" rel="tooltip" data-original-title="Subtract five points to the score"></i></td>
+                <td><i class="remove icon-remove" rel="tooltip" data-original-title="Delete player"></i></td>
+            </profile>
+
+        {{/each}}
+
+        </tbody>
+    </table>
 </div>

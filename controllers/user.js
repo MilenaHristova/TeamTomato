@@ -5,6 +5,7 @@
 const User = require('mongoose').model('User');
 const UserInfo = require('mongoose').model('UserInfo');
 
+
 const encryption = require('./../utilities/encryption');
 
 module.exports = {
@@ -36,8 +37,8 @@ module.exports = {
                     salt: salt
                 };
 
-
                 User.create(userObject).then(user => {
+
                     let userProfile = {
                         user: user.id,
                         score: 0,
@@ -59,9 +60,11 @@ module.exports = {
 
                         res.redirect('/')
                     })
+
                 })
             }
         })
+
     },
 
     loginGet: (req, res) => {
