@@ -48,8 +48,7 @@ module.exports = {
 
                         let scoreObject = {
                             user: user.id,
-                            score: 0,
-                            place: 0
+                            score: 0
                         }
 
                         Score.create(scoreObject).then(score => {
