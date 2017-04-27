@@ -5,5 +5,8 @@
 module.exports = {
     index: (req, res) => {
         res.render('home/index');
+    },
+    lobby: (req,res) => {
+        res.render('home/lobby');
     }
 }

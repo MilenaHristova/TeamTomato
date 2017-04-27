@@ -11,16 +11,15 @@ let scoreSchema = mongoose.Schema(
     }
 );
 scoreSchema.method({
-    update: function (playerScore) {
+    update: function (currentUserScore) {
         let scores = [];
-        Score.find({score:{$exists : true}}).sort({score:-1}).populate('user').then(users => {
-            for(user of users){
-                scores.add(user);
-            }
+        Score.find({score:{$exists : true}}).sort({score:-1}).populate('user').then(userScores => {
+            scores.push(userScores);
         })
-        for(s of scores){
-            if(s.user == playerScore.user){
-                playerScore.place = scores.indexOf(s);
+        for(let s of scores){
+            if(s.id == currentUserScore){
+                let p = scores.indexOf(s);
+                Score.update({id:currentUserScore},{$set:{place:p}});
             }
         }
 

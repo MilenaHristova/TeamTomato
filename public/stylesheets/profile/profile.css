@@ -1,0 +1,63 @@
+@font-face
+{
+    font-family: atari;
+    src: url("Font/atari.ttf");
+}
+
+body
+{
+	background-image : url("http://www.hdwallpaperup.com/wp-content/uploads/2015/09/Simple-Blue-Background-1024x768.jpg");
+	background-size : cover;
+	font-family : atari;
+	font-size: 8pt;
+}
+
+.profile_container
+{
+	width : 65%;
+	margin : 11.5% auto 6.5%;
+	background-color : #d4d4d4;
+	padding : 0 30px 30px;
+	border-radius : 6px;
+	box-shadow : 0 5px 5px rgba(0, 0, 0, 0.85);
+	text-align : center;
+}
+.avatar
+{
+	border-radius : 100px;
+	height : 150px;
+	width : 150px;
+	position : relative;
+	margin : auto;
+	top : -60px;
+	box-shadow : 0 0 0 15px #00ADDD;
+}
+.avatar img
+{
+	position : absolute;
+	left : 0;
+	top : 0;
+	border-radius : 100px;
+}
+
+h2 
+{
+	font-size: 32px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	color: #333;
+}
+p 
+{
+	font-size: 16px;
+	line-height: 26px;
+	margin-bottom: 20px;
+	color: #666;
+}
+
+.username
+{
+	margin-top:18px;
+	margin-right: 8px;
+	color: white;
+}

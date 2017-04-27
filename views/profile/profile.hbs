@@ -1,20 +1,18 @@
-<div class="container body-content">
-    <div class="row">
-        <div class="col-md-12">
-            <profile>
-                <header>
-                    <h2>{{profile.username}}</h2>
-                </header>
+<link rel="stylesheet" href="/stylesheets/profile/profile.css"/>
 
-                <p>
-                    {{profile.score.score}}
-                </p>
-
-                <small class="author">
-                    {{profile.userInfo.email}}
-                </small>
-
-            </profile>
-        </div>
+<profile>
+<div class = "profile_container">
+    <div class = "avatar">
+        <img src = "https://i.ytimg.com/vi/gVYyuv29OWY/maxresdefault.jpg" height = "150" width = "150" alt = "profile_picture"/>
     </div>
+    <h2>{{profile.username}}</h2>
+    <p>
+        {{profile.userInfo.description}}
+    </p>
+    <p>Email : {{profile.userInfo.email}}</p>
+    <p>
+        High Score : {{profile.score.score}}
+    </p>
 </div>
+</profile>
+

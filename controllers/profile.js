@@ -4,17 +4,26 @@
 
 const UserInfo = require('mongoose').model('UserInfo');
 const User = require('mongoose').model('User');
+const Score = require('mongoose').model('Score');
 
 module.exports = {
     details: (req,res) => {
         let id = req.params.id;
 
         User.findById(id).populate('userInfo').populate('score').then(info => {
-            if(!req.user){
-                res.render('profile/profile', {profile:info});
-                return;
+            let scores = [];
+            Score.find({score:{$exists : true}}).sort({score:-1}).populate('user').then(userScores => {
+                scores.push(userScores);
+            })
+            for(let s of scores){
+                if(s.id == currentUserScore){
+                    let p = scores.indexOf(s);
+                    Score.update({id:currentUserScore},{$set:{place:p}});
+                }
             }
-            res.render('profile/profile', {profile:info});
+            res.render('profile/profile', {profile:info})
+
+
         })
         
     },

@@ -1,0 +1,35 @@
+@font-face
+{
+    font-family: atari;
+    src: url("Font/atari.ttf");
+}
+
+body
+{
+	font-family: atari;
+	font-size: 8pt;
+	background-image : url("http://www.hdwallpaperup.com/wp-content/uploads/2015/09/Simple-Blue-Background-1024x768.jpg");
+	background-size : cover;
+}
+.game_container
+{
+	margin : 5% auto 4.5%;
+	text-align : center;
+}
+canvas 
+{ 
+	background: #eee; 
+	display: block;
+	margin: 0 auto;
+	border: 5px;
+		border-style: outset;
+		border-color: #0095DD;
+		border-radius: 25px;
+}
+
+.username
+{
+	margin-top:18px;
+	margin-right: 8px;
+	color: white;
+}

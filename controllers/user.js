@@ -10,10 +10,6 @@ const Score = require('mongoose').model('Score');
 const encryption = require('./../utilities/encryption');
 
 module.exports = {
-    registerGet: (req, res) => {
-        res.render('user/register');
-    },
-
     registerPost:(req, res) => {
         let registerArgs = req.body;
 
@@ -77,10 +73,10 @@ module.exports = {
         })
 
     },
-
-    loginGet: (req, res) => {
-        res.render('user/login');
+    registerGet: (req,res)=>{
+        res.render('user/register');
     },
+
 
     loginPost: (req, res) => {
         let loginArgs = req.body;
@@ -95,7 +91,7 @@ module.exports = {
             req.logIn(user, (err) => {
                 if (err) {
                     console.log(err);
-                    res.redirect('/user/login', {error: err.message});
+                    res.redirect('user/login', {error: err.message});
                     return;
                 }
 
@@ -103,9 +99,13 @@ module.exports = {
             })
         })
     },
+    loginGet:(req,res)=>{
+        res.render('user/login');
+    },
 
     logout: (req, res) => {
         req.logOut();
         res.redirect('/');
     }
+
 };

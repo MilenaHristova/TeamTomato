@@ -1,0 +1,262 @@
+@font-face
+{
+    font-family: atari;
+    src: url("Font/atari.ttf");
+    /*Font/atari.ttf */
+}
+
+body 
+{
+  padding: 20px;
+  font-family: atari;
+  font-size: 8pt;
+  box-sizing: border-box;
+  background-image: url("http://www.hdwallpaperup.com/wp-content/uploads/2015/09/Simple-Blue-Background-1024x768.jpg");
+  background-size: cover;
+}
+
+
+.navbar-center
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    font-size: 150%;
+}
+
+.login
+{
+    margin-top: 100px;
+    text-align: center;
+}
+
+#rectangle {
+	margin-top: 100px;
+    width: 3px ;
+	height: 300px;
+	background: white;
+    -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+    opacity: .5;
+    margin-left: 25px;
+}
+
+.button-linker
+{
+    color: white;
+}
+
+.reg_name
+{
+    max-width: 200px;
+}
+
+.button-margin
+{
+    margin-top:13px;
+    
+}
+
+.pesho
+{
+    margin-top: 16px;
+}
+
+.register
+{
+    margin-right: 80px;
+}
+.button-right
+{
+    margin-right:75px;
+}
+.loger
+{
+    margin-left: 20px;
+}
+.center-lobby
+{
+    margin-top: 100px;
+    margin-left: 150px; 
+}
+.right-lobby
+{
+    height: 350px;
+    width: 350px;
+    margin-top: 100px;
+    margin-left: 18.5%;
+    border: 5px solid white;
+    border-radius: 15px;
+    background-color: #0095dd;
+}
+.game-name
+{
+    margin-left: 155px;
+    font-family: atari;
+    font-style: italic;
+    font-size: 30px;
+    color: white;
+}
+.lobby
+{
+    text-align: center;
+    margin-top: 100px;
+}
+.center-description
+{
+    margin-top: 50px;
+}
+.play-btn
+{
+    margin-top: 2%;
+    
+}
+#oval {
+	width: 900px;
+	height: 500px;
+	background: #2AA1D0;
+    border-color: black;
+	-moz-border-radius:  50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+    margin-left: 120px;
+    margin-top: 50px;
+    opacity: 0.2;
+}
+
+.title
+{
+    margin-top:100px;
+    font-family: atari;
+    margin-left: 30px;
+    text-align: center;
+    color: white;
+}
+
+.description 
+{
+    text-align: center ;
+    font-family: atari;
+    margin-top: 20px;
+    color: white;
+}
+
+.media-carousel 
+{
+  margin-bottom: 0;
+  padding: 0 40px 30px 40px;
+  margin-top: 30px;
+}
+/* Previous button  */
+.media-carousel .carousel-control.left 
+{
+  left: -12px;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Next button  */
+.media-carousel .carousel-control.right 
+{
+  right: -12px !important;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Changes the position of the indicators */
+.media-carousel .carousel-indicators 
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.media-carousel .carousel-indicators li 
+{
+  background: #c0c0c0;
+}
+.media-carousel .carousel-indicators .active 
+{
+  background: #333333;
+}
+.media-carousel img
+{
+  width: 250px;
+  height: 100px
+}
+
+.button-center
+{
+    margin-left: 35%;
+    margin-top: 30px;
+}
+
+.gallery
+{
+    margin-top: 50px;
+}
+
+.color
+{
+    color: white;
+}
+
+.username
+{
+	margin-top:15px;
+	font-size: 10pt;
+	margin-right: 8px;
+	color: white;
+}
+
+.ladder_button
+{
+	margin : 7% 37.25% 2.5%;
+}
+
+.lad-title
+{
+	font-size : 14pt;
+}
+
+.lobby
+{
+    margin-top: 80px;
+}
+
+.lobby-image
+{
+    height: 350px;
+    width: 350px;
+    margin-right: 18.5%;
+    border: 5px solid white;
+    border-radius: 15px;
+}
+
+.story
+{
+    text-align: center;
+}
+
+input[type = "text"]
+{
+    font-size: 9px;
+}
+
+input[type = "password"]
+{
+    font-size: 9px;
+}
+
