@@ -12,7 +12,12 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-
+@font-face
+{
+  font-family: atari;
+  src: url("Font/atari.ttf");
+  /*Font/atari.ttf */
+}
 body {
   padding-top: 70px;
   padding-bottom: 20px;
@@ -7055,4 +7060,12 @@ article .author  {
 }
 article .author  {
   content: '\2014 \00A0';
+}
+
+.error
+{
+  text-align: center;
+  color:red;
+  font-family: atari;
+  font-size:10pt;
 }

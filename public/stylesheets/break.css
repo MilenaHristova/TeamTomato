@@ -13,7 +13,7 @@ body
 }
 .game_container
 {
-	margin : 5% auto 4.5%;
+	margin : 1% auto .5%;
 	text-align : center;
 }
 canvas 
